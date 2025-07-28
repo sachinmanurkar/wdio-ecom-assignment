@@ -59,25 +59,13 @@ export const config: WebdriverIO.Config = {
     //
     capabilities: [
         {
-            browserName: "chrome",
-            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
-            // grid with only 5 firefox instances available you can make sure that not more than
-            // 5 instances get started at a time.
-            maxInstances: 1,
+            browserName: 'chrome',
             acceptInsecureCerts: true,
-            "goog:chromeOptions": {
-                args:
-                    headless.toUpperCase() === "Y"
-                        ? [
-                            "--disable-web-security",
-                            "--headless",
-                            "--disable-dev-shm-usage",
-                            "--no-sandbox",
-                            "--window-size=1920,1080",
-                        ]
-                        : [],
-            },
-            timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 },
+            maxInstances: 1,
+            'goog:chromeOptions': {
+                args: ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage']
+
+            }
         },
         // {
         //     browserName: 'firefox',
