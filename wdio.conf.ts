@@ -58,16 +58,16 @@ export const config: WebdriverIO.Config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [
-        {
-            browserName: 'chrome',
-            acceptInsecureCerts: true,
-            maxInstances: 1
-        },
         // {
-        //     browserName: 'firefox',
+        //     browserName: 'chrome',
         //     acceptInsecureCerts: true,
         //     maxInstances: 1
-        // }
+        // },
+        {
+            browserName: 'firefox',
+            acceptInsecureCerts: true,
+            maxInstances: 1
+        }
     ],
 
     //
