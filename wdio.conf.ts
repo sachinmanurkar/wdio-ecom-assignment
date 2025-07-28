@@ -57,21 +57,28 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome',
-        'goog:chromeOptions': {
-            args: [
-                '--no-sandbox',
-                '--disable-dev-shm-usage',
-                '--user-data-dir=/tmp/chrome-user-data-dir-' + Date.now()
-            ],
-            binary: '/usr/bin/google-chrome',
-            prefs: {
-                'profile.password_manager_leak_detection': false
-            }
+    capabilities: [
+        {
+            browserName: "chrome",
+            // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+            // grid with only 5 firefox instances available you can make sure that not more than
+            // 5 instances get started at a time.
+            maxInstances: 1,
+            acceptInsecureCerts: true,
+            "goog:chromeOptions": {
+                args:
+                    headless.toUpperCase() === "Y"
+                        ? [
+                            "--disable-web-security",
+                            "--headless",
+                            "--disable-dev-shm-usage",
+                            "--no-sandbox",
+                            "--window-size=1920,1080",
+                        ]
+                        : [],
+            },
+            timeouts: { implicit: 10000, pageLoad: 20000, script: 30000 },
         },
-        acceptInsecureCerts: true,
-    },
         // {
         //     browserName: 'firefox',
         //     acceptInsecureCerts: true,
