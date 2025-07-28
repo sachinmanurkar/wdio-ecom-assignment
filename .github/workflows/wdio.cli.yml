@@ -19,9 +19,10 @@ jobs:
             uses: actions/setup-node@v3
             with:
                 node-version: '16'
-    
+          
+          # Using --legacy-peer-deps to avoid peer dependency conflicts during install
           - name: Install dependencies
-            run: npm install
+            run: npm install --legacy-peer-deps
     
           - name: Run WebdriverIO tests
             run: npm run wdio
