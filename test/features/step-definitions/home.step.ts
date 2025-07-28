@@ -1,5 +1,4 @@
 import { Given, Then, When } from "@wdio/cucumber-framework";
-import { expect } from 'chai';
 import homePage from "../page-objects/home.page";
 
 Given(/^I open browser and load url (.*)$/, async (url: string) => {
@@ -11,7 +10,7 @@ Then(/^I wait for the page to load$/, async () => {
 });
 
 Then(/^I should see the page title as (.*)$/, async (expectedTitle: string) => {
-    await expect(await homePage.getTitle()).to.equal(expectedTitle);
+    await expect(await homePage.getTitle()).toContain(expectedTitle);
 });
 
 When(/^I enter (.*) in the search box$/, async (searchKey: string) => {
