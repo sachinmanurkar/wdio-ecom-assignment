@@ -40,6 +40,7 @@ class SearchResultsPage extends Page {
 
     /** Page Actions */
     async getProductTitles() {
+        await this.resultsContainer.waitForDisplayed({timeout: 5000});
         const productTitle = await this.resultsContainer.getText();
         return productTitle;
     }
