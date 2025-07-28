@@ -57,12 +57,21 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [
-        {
-            browserName: 'chrome',
-            acceptInsecureCerts: true,
-            maxInstances: 1
+    capabilities: [{
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+            args: [
+                '--no-sandbox',
+                '--disable-dev-shm-usage',
+                '--user-data-dir=/tmp/chrome-user-data-dir-' + Date.now()
+            ],
+            binary: '/usr/bin/google-chrome',
+            prefs: {
+                'profile.password_manager_leak_detection': false
+            }
         },
+        acceptInsecureCerts: true,
+    },
         // {
         //     browserName: 'firefox',
         //     acceptInsecureCerts: true,
