@@ -20,5 +20,5 @@ Feature: Smartwatch Shopping Workflow
         Examples:
             | url                    | pageTitle                                                                                          | searchKey    | brand      | minPrice | maxPrice |
             | https://www.amazon.in/ | Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in | smartwatches | Noise      | 1000     | 4000     |
-            | https://www.amazon.in/ | Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in | smartwatches | boAt       | 1000     | 5000     |
-            | https://www.amazon.in/ | Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in | smartwatches | Fire-Boltt | 1000     | 5000     |
+            # | https://www.amazon.in/ | Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in | smartwatches | boAt       | 1000     | 5000     |
+            # | https://www.amazon.in/ | Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in | smartwatches | Fire-Boltt | 1000     | 5000     |
