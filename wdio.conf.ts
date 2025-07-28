@@ -29,7 +29,7 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        `${process.cwd()}/test/features/demo/*.feature`
+        `${process.cwd()}/test/features/amazon/*.feature`
     ],
     // Patterns to exclude.
     exclude: [
